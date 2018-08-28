@@ -3,14 +3,14 @@
 #include "chapter1.4.h"
 
 int main() {
-    printf("Hello, World!\n");
+    printf("Hello, Chapter 1.4!\n");
 
     int count = 0;
-    int integer_list[] = {1,2,-3, 1,5,-6};
-    int length = sizeof(integer_list)/ sizeof(int);
+    int integer_list[] = {1,2,-3,2, 1,5,-6};
 
-    count = ThreeSum(integer_list, length);
+    count = FindPairs(integer_list, 7);
 
-    printf("the returned count %d", count);
+    printf("the final count %d", count);
+
     return 0;
 }

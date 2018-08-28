@@ -12,5 +12,9 @@ int ThreeSum(int integer_list[], int length);
 
 int OverFlowChecker(int a, int b, int c);
 
+int FindPairs(int input_array[], int length);
+
+int CompareTwoInts(void * a, void * b);
+
 
 #endif //ALGORITHMS_CHAPTER1_4_H
