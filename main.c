@@ -5,12 +5,11 @@
 int main() {
     printf("Hello, Chapter 1.4!\n");
 
-    int count = 0;
-    int integer_list[] = {1,2,-3,2, 1,5,-6};
+    int index = 0;
+    int integer_list[] = {2, 5, 2, 31, 22, 22, 27, 29};
+    int integer_list2[] = {2, 22 ,3 ,22, 27, 30, 31, 5};
 
-    count = FindPairs(integer_list, 7);
-
-    printf("the final count %d", count);
+   FindMutualOccurences(integer_list, integer_list2, 8, 8);
 
     return 0;
 }
