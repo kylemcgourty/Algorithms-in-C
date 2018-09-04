@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #include "chapter1.4.h"
+#include "chapter2.1.h"
 
 int main() {
     printf("Hello, Chapter 1.4!\n");
