@@ -4,13 +4,18 @@
 #include "chapter2.1.h"
 
 int main() {
-    printf("Hello, Chapter 1.4!\n");
+    printf("Hello, Chapter 2.1!\n");
 
-    int index = 0;
-    int integer_list[] = {2, 5, 2, 31, 22, 22, 27, 29};
-    int integer_list2[] = {2, 22 ,3 ,22, 27, 30, 31, 5};
 
-   FindMutualOccurences(integer_list, integer_list2, 8, 8);
+    int mixed_array[] = { 5, 7, 3, 9, 1, 0, 2, 6, 7, 11, 1, 44};
+
+    ShellSort(mixed_array, 12);
+
+    for (int i = 0; i < 12; i++)
+    {
+        printf("the array values %d\n", mixed_array[i]);
+    }
+
 
     return 0;
 }
