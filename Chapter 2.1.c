@@ -2,6 +2,9 @@
 // Created by Kyle McGourty on 9/4/18.
 //
 
+#include <stdio.h>
+
+
 //Chapter 2.1
 
 //2.1.1
@@ -87,6 +90,11 @@ char answer2_1_9[] = "                  E A S Y S H E L L S O R T Q U E S T I O 
 
 //2.1.10
 
+char answer[] = "Selection will always use a quadratic runtime.";
+
+
+//2.1.11
+
 
 int less(int p, int q){
     if (q <= p){
@@ -134,3 +142,70 @@ int ShellSort(int *random_array, int length){
 
 
 }
+
+
+//2.1.12
+
+
+int ShellSortPrint(int *random_array, int length){
+
+    int sequences[10];
+    int spacer = 1;
+    int count = 0;
+    sequences[0] = 1;
+    int tracker = 0;
+    while(spacer < length)
+    {
+        spacer = spacer * 3 + 1;
+        sequences[++count] = spacer;
+    }
+
+    while(spacer >= 1){
+        for (int i = spacer; i < length; i++)
+        {
+             ++tracker;
+            for (int j = i; j >=spacer && less(random_array[j], random_array[j-spacer]); j -=spacer)
+            {
+                ++tracker;
+                exchange(random_array, j, j-spacer);
+            }
+
+        }
+
+        spacer = sequences[--count];
+    }
+
+    int compares_constant = tracker / length;
+    printf("compares / length %d", compares_constant);
+
+}
+
+
+//from main
+
+//int mixed_array_100[100];
+//int mixed_array_1000[1000];
+//int mixed_array_10000[10000];
+//
+//srand(0);
+//
+//for (int i = 0; i < 100; i++)
+//{
+//mixed_array_100[i] = rand();
+//}
+//
+//for (int g = 0; g < 1000; g++)
+//{
+//mixed_array_1000[g] = rand();
+//}
+//
+//for (int h = 0; h < 10000; h++)
+//{
+//mixed_array_10000[h] = rand();
+//}
+//
+//ShellSortPrint(mixed_array_100, 100);
+//ShellSortPrint(mixed_array_1000, 1000);
+//ShellSortPrint(mixed_array_10000, 10000);
+
+// compares to length values: 8, 13, 22

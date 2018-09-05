@@ -11,4 +11,6 @@ int ShellSort(int *random_array, int length);
 
 void exchange(int *a, int p, int q);
 
+int ShellSortPrint(int *random_array, int length);
+
 #endif //ALGORITHMS_CHAPTER2_1_H
