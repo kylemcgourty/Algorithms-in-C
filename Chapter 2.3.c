@@ -175,9 +175,4 @@ int is_less(int i, int j, int* counter){
 
 //2.3.7
 
-char answer2_3_8[] = "When quicksort runs, each array index has an equal probabilty of becoming the partition value. If the "
-                     "partition lies on the median index, it array's will be paritioned roughly in half. Following this logic until"
-                     "we have arrays of size 1 will lead to n subarrays of size 1, n/2 subarrays of 2, and 2n arrays of size 0, if the"
-                     "partition continues. If the partition is uneven but continues to arrays of size 1. We would have a mix of array sizes."
-                     "In one case, we would still n arrays of size 1 but only 1 array of size 2. Other variations would have a mix"
-                     "of these array sizes."
+char answer2_3_8[] = "TBC";
