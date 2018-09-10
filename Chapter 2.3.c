@@ -94,3 +94,90 @@ int compare(int first, int second){
 
 }
 
+//2.3.6
+
+void QuickSort_CompareTracker(int *a, int lo, int hi, int *counter){
+    if (hi <= lo) return;
+    int j = partition(a, lo, hi, counter);
+    QuickSort_CompareTracker(a, lo, j-1, counter);
+    QuickSort_CompareTracker(a, j+1, hi, counter);
+}
+
+
+int partition(int *a, int lo, int hi, int *counter){
+    int i = lo, j = hi + 1;
+    int comparable = a[lo];
+
+    while(1)
+    {
+        while(is_less(a[++i], comparable, counter)) if (i == hi) break;
+        while(is_less(comparable, a[--j], counter)) if (j == lo) break;
+        if (i >= j) break;
+        exchange(a, i, j);
+    }
+    exchange(a, lo, j);
+    return j;
+}
+
+int is_less(int i, int j, int* counter){
+
+    (*counter) += 1;
+    if (i < j) return 1;
+    else if (i == j)
+    {
+        return 0;
+    } else
+    {
+        return 0;
+    }
+
+}
+
+
+//srand(0);
+//int hundred[100];
+//int thousand[1000];
+//int tthousand[10000];
+//
+//int c1 = 0;
+//int c2 = 0;
+//int c3 = 0;
+//
+//for (int i = 0; i< 100; i++)
+//{
+//hundred[i] = rand();
+//}
+//
+//for (int j = 0; j< 1000; j++)
+//{
+//thousand[j] = rand();
+//}
+//
+//for (int q = 0; q< 10000; q++)
+//{
+//tthousand[q] = rand();
+//}
+//
+//QuickSort_CompareTracker(hundred, 0, 99, &c1);
+//QuickSort_CompareTracker(thousand, 0, 999, &c2);
+//QuickSort_CompareTracker(tthousand, 0, 9999, &c3);
+//
+//
+//printf("count 1, %d\n", c1);
+//printf("count 2, %d\n", c2);
+//printf("count 3, %d\n", c3);
+
+
+//752 vs 2*100 ln 100 = 1328
+//11,808 vs 2*1000 ln 1000 = 19920
+//171797 vs 2 * 10000 ln 10000 = 2656000
+
+
+//2.3.7
+
+char answer2_3_8[] = "When quicksort runs, each array index has an equal probabilty of becoming the partition value. If the "
+                     "partition lies on the median index, it array's will be paritioned roughly in half. Following this logic until"
+                     "we have arrays of size 1 will lead to n subarrays of size 1, n/2 subarrays of 2, and 2n arrays of size 0, if the"
+                     "partition continues. If the partition is uneven but continues to arrays of size 1. We would have a mix of array sizes."
+                     "In one case, we would still n arrays of size 1 but only 1 array of size 2. Other variations would have a mix"
+                     "of these array sizes."
