@@ -9,17 +9,18 @@ int main() {
     printf("Hello, Chapter 2.3!\n");
 
 
-//int toBeSorted[] = {3, 4,2, 5, 1, 0, 9, 11, 22};
-//
-//
-//int counter = 0;
-//
-//QuickSort_CompareTracker(toBeSorted, 0, 8, &counter);
-//
-//for (int i = 0; i< 9; i++){
-//    printf("The sorted array %d\n", toBeSorted[i]);
-//}
-//  printf("the compares %d", counter);
+int toBeSorted[100] ;
+
+int counter = 0;
+
+
+for (int i = 0; i< 100; i++){
+    toBeSorted[i] = 11;
+}
+
+    QuickSort_CompareTracker(toBeSorted, 0, 99, &counter);
+
+  printf("the compares %d", counter);
 
 
 

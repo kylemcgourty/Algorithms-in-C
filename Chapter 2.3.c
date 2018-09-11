@@ -175,4 +175,43 @@ int is_less(int i, int j, int* counter){
 
 //2.3.7
 
-char answer2_3_8[] = "TBC";
+char answer2_3_7[] = "TBC";
+
+
+//2.3.8
+char answer2_3_8[] = "An array of size 100 makes 564 compares.";
+
+//
+//int toBeSorted[100] ;
+//
+//int counter = 0;
+//
+//
+//for (int i = 0; i< 100; i++){
+//toBeSorted[i] = 11;
+//}
+//
+//QuickSort_CompareTracker(toBeSorted, 0, 99, &counter);
+//
+//printf("the compares %d", counter);
+
+//2.3.9
+
+char answer2_3_9[] = "For an array consisting of just two keys, a single call to partition can sort the array. An"
+                     "array consisting of three keys will need two calls to partition to completely sort the array";
+
+char answer2_3_10[] = "For n = 1 million, let the number of compares for an average instance of QuickSort would be near 1.39 n lg n."
+                      "In this example, nhe number of compares comes to 1.39 * 1e^6 * 19.93 = 27,702,700. If QuickSort takes 1 billion compares,"
+                      "then its runtime is .1 n^2, a scenario proportional to its worst case run time."
+                      ""
+                      "From http://homepages.math.uic.edu/~leon/cs-mcs401-r07/handouts/quicksort-continued.pdf:"
+                      ""
+                      "'With a randomized version of quicksort (pivot element chosen randomly), "
+                      "the standard deviation in the number of comparisons is also small.'"
+
+                      "For an n of size 1 million, and an average number of compares is ~ 27 million. If we let at standard"
+                      "deviaton equal ~10 million compares, then 100 billion compares is (1e^11 - 27e^6)/10e^6) =  9997.3 "
+                      "standard deviations away from the mean. According to Chebyshev's inequality, the probability of Quicksort"
+                      "taking 100 billion compares for an array of size 1 million is 1/(9997.3)^2 = 1.0*e^-9";
+
+char answer2_3_11[];
