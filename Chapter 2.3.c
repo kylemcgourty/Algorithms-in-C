@@ -214,4 +214,34 @@ char answer2_3_10[] = "For n = 1 million, let the number of compares for an aver
                       "standard deviations away from the mean. According to Chebyshev's inequality, the probability of Quicksort"
                       "taking 100 billion compares for an array of size 1 million is 1/(9997.3)^2 = 1.0*e^-9";
 
-char answer2_3_11[];
+char answer2_3_11[] = "When scanning an array with the partition function, the original behavior moves keys equal to the comparable"
+                      "value to the right of the paritioning key. With the newly proposed behavior, these keys end up on the left and right"
+                      " of the partition. When the array is partitioned into subarrays, exchanges are sacrificed for more scans. The result"
+                      "is proportional to a quadratic runtime";
+
+char answer2_3_12[] = "B A B A B A B A C A D A B R A"
+                      "A B B"
+                      "A A B B B"
+                      "A A A A B B B B"
+                      "A A A A B B B B A A D A B R C"
+                      "A A A A A A B B B B R A B D C"
+                      "A A A A A A A B B B B B R D C"
+                      "A A A A A A A B B B B B D C R"
+                      "A A A A A A A B B B B B C D R";
+
+char answer2_3_13 = "In the best case, the array is already sorted and the recursive depth is 1."
+                     "In the average case, the array is randomly shuffled and the recursive depth lg n."
+                     "In the worst case, the array partitions are unbalanced. The recursive depth ~ n.";
+
+char answer2_3_14 = "Let n = 3. Comparing the first (i=0) and  largest (j=2)  item is 2/(2-0+1) = 2/3, meaning that the first call"
+                    "to partition will guarantee that the items are compared."
+                    "Let n = 4. Comparing the first (i =0) and fourth (j=3) smallest items is 2/(3-0+1) = 2/4 = 1/2, meaning that the first and fourth"
+                    "smallest items will only be compared in the call to partition if one of them is chose as the comparable. This probability is 1/2."
+                    "Let n = 100. The probability of comparing the first (i=0) and the 100th item (j=99) = 2/(99-0+1) = 2/100 = 1/50."
+                    "Thus, as the number of distinct keys increases, the probability of comparing the smallest and the largest keys decreases."
+                    "If all keys in an array are distinct, then the expected value of the number of compares  is"
+                    "Summation (j=0) (n=99) Summation (i = 0) (k=99( (2(/j - i + 1)), which should equate to 1.39 n lg n";
+
+
+
+
