@@ -229,11 +229,11 @@ char answer2_3_12[] = "B A B A B A B A C A D A B R A"
                       "A A A A A A A B B B B B D C R"
                       "A A A A A A A B B B B B C D R";
 
-char answer2_3_13 = "In the best case, the array is already sorted and the recursive depth is 1."
+char answer2_3_13[] = "In the best case, the array is already sorted and the recursive depth is 1."
                      "In the average case, the array is randomly shuffled and the recursive depth lg n."
                      "In the worst case, the array partitions are unbalanced. The recursive depth ~ n.";
 
-char answer2_3_14 = "Let n = 3. Comparing the first (i=0) and  largest (j=2)  item is 2/(2-0+1) = 2/3, meaning that the first call"
+char answer2_3_14[] = "Let n = 3. Comparing the first (i=0) and  largest (j=2)  item is 2/(2-0+1) = 2/3, meaning that the first call"
                     "to partition will guarantee that the items are compared."
                     "Let n = 4. Comparing the first (i =0) and fourth (j=3) smallest items is 2/(3-0+1) = 2/4 = 1/2, meaning that the first and fourth"
                     "smallest items will only be compared in the call to partition if one of them is chose as the comparable. This probability is 1/2."
