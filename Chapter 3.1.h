@@ -39,7 +39,7 @@ int TimeLLSymbolTable_Search(char *key);
 
 extern struct TimeNode* time_first;
 
-void delete(char * date);
+//void delete_item(char * date);
 
 removeMiddle(struct TimeNode * previous, struct TimeNode *current);
 

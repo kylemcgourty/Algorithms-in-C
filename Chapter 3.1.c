@@ -601,23 +601,23 @@ int binary_search_keys(char *key, int keys_length, char string_keys[11][3]){
 }
 
 
-void delete(char *delete_key, char keys[][10], int keys_array_length, int values[]){
-
-        int index = binary_search_keys(delete_key, keys_array_length, keys);
-
-        int values_index = keys[index];
-        keys[index] = NULL;
-        values[values_index] = NULL;
-
-        return;
-
-}
+//void delete_item(char *delete_key, char keys[][10], int keys_array_length, int values[]){
+//
+//        int index = binary_search_keys(delete_key, keys_array_length, keys);
+//
+//        int values_index = keys[index];
+//        keys[index] = NULL;
+//        values[values_index] = NULL;
+//
+//        return;
+//
+//}
 
 
 //3.1.17
 
 
-char * floor(char * key, char keys[][10], int keys_array_length,){
+char * floor(char * key, char keys[][10], int keys_array_length){
     return keys[binary_search_keys(key, keys_array_length, keys)-1];
 }
 
@@ -634,35 +634,35 @@ char answer3_1_18[] = "The recurrence relation can be solved with C(n) <= C(Floo
 //3.1.19
 
 
-void FrequencyCounter(){
-    //...when iterating through they keys of the ST,
-
-    //establish a queue
-
-    struct Counter {
-        char * key;
-        int value;
-        int count;
-        struct *Counter next;
-    };
-
-    //establish beginning and end of queue
-    struct *Counter head;
-    struct *Counter tail;
-
-    int count;
-    //iterate through keys
-            // compare counts
-    if ((counte =st.get(word)) > st.get(max)){
-
-        max = word;
-
-        //add new largest count to queue
-        new_count = CreateCounterNode();
-        new_count->key = key;
-        new_count->count = count;
-    }
-}
+//void FrequencyCounter(){
+//    //...when iterating through they keys of the ST,
+//
+//    //establish a queue
+//
+//    struct Counter {
+//        char * key;
+//        int value;
+//        int count;
+//        struct *Counter next;
+//    };
+//
+//    //establish beginning and end of queue
+//    struct *Counter head;
+//    struct *Counter tail;
+//
+//    int count;
+//    //iterate through keys
+//            // compare counts
+//    if ((counte =st.get(word)) > st.get(max)){
+//
+//        max = word;
+//
+//        //add new largest count to queue
+//        new_count = CreateCounterNode();
+//        new_count->key = key;
+//        new_count->count = count;
+//    }
+//}
 
 
 //3.1.20
@@ -672,4 +672,4 @@ char anwer3_1_20[] = "C(n) <= lg (n + 1) <= lg n + 1; The function is monotonic 
                      "Since lg n is monotonic, lg (n+1) will increase for all values between powers of 2. E.g.,"
                      "lg n increases for 5, 6, 7. During this time, lg(n+1) is not whole number but so it will need 1 more compare to complete its search,"
                      "hence the recurrence will be less than or equal lg n + 1. Since this relation holds for all numbers between powers of two and powers of two,"
-                     "the relation is true for all n >= 1."
+                     "the relation is true for all n >= 1.";
