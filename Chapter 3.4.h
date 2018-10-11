@@ -26,5 +26,7 @@ void linear_probing_put(char * keys, int * values, char key, int value, int keys
 
 int linear_probe_hash(char key);
 
+int bad_hashing(int string_length, char * s);
+
 
 #endif //ALGORITHMS_CHAPTER_3_4_H

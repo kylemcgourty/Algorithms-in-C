@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "math.h"
 //3.4.2
 
 
@@ -182,3 +183,101 @@ void linear_probing_put(char * keys, int * values, char key, int value, int keys
 //{
 //printf("the key %c\n", keys[i]);
 //}
+
+
+
+//3.4.12
+
+char answer3_4_12[] = "A, B, C, D, E, F"
+                      "Minimum and maximum probes: 11; Order: B C A G D E F";
+
+//3.4.13
+
+char answer3_4_13[] = "A, C";
+
+//3.4.14
+
+char answer3_4_14[] = "B";
+
+//3.4.15
+char answer3_4_15[] = "In the worst case, all keys map to the same index, creating one large cluster. The"
+                      "number of compares would be proportional to 1/2 n^2";
+
+//3.4.16
+
+char answer3_4_16[] = "The table is half full, with keys filled at random. There are 10^6/100 = 10,000 keys divisible"
+                      "by one hundred. The probability that all of these keys are filled is given by (1/2)(10^4)/(10^6),"
+                      "which is .005";
+
+//3.4.17
+
+
+char keys_after_delete[] = "10, 9, - , -, A, H, S, L, - E, ...";
+
+//3.4.19
+
+void keys_seperate_chaining(struct Node * keys, int keys_length)
+{
+    for (int i = 0; i< keys_length; i++)
+    {
+        if ((keys + i)->key == NULL) continue;
+
+        struct Node *node = (keys + i);
+
+        while(1){
+            printf("key %s", node->key);
+            if (node->next == NULL) break;
+            node = node->next;
+        }
+    }
+}
+
+
+void keys_linear_probing(char * keys, int keys_length){
+    for (int i=0; i < keys_length; i++)
+    {
+        if (*(keys+i) != '\0') printf("key %c \n", *(keys+i));
+    }
+}
+
+//3.4.20
+
+
+double linear_probing_average_cost(int num_keys, int table_size)
+{
+    double lower_bound = 1/2*(1+1/(1-num_keys/table_size));
+    double upper_bound = 1/2*(1+1/pow((1-num_keys/table_size), 2));
+
+    return (lower_bound + upper_bound)/2;
+}
+
+
+//3.4.23
+
+int bad_hashing(int string_length, char * s){
+    int hash = 0;
+    for (int i =0; i < string_length; i++ )
+    {
+        int position = *(s+i) - 'a' + 1;
+        hash = (256 * hash + position) % 255;
+    }
+
+    return hash;
+}
+
+char answer3_4_23[] = "hash for 'abc' = 6; hash for 'bca' = 6; hash for 'cba' = 6";
+
+//int hash1 = bad_hashing(3, "abc");
+//int hash2 = bad_hashing(3, "bca");
+//int hash3 = bad_hashing(3, "cba");
+//
+//printf("The hashes %d %d %d \n", hash1, hash2, hash3);
+
+
+
+
+
+//3.4.24
+char answer [] = "Doubles are not considered here. To echo the book: BST use between ~16n and ~64n bytes of memory, where n is the number of nodes; Separate chaining"
+                 "uses ~48n + 32m bytes, where n is key-value pairs and m is the size of the array. Linear probing"
+                 "uses between ~32 n and ~128 n bytes.";
