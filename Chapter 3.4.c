@@ -10,7 +10,7 @@
 
 
 
-unsigned long hash(unsigned char *str)
+unsigned long hash1(unsigned char *str)
 {
     unsigned long hash = 5381;
     int c;
@@ -24,7 +24,7 @@ unsigned long hash(unsigned char *str)
 
 int get(struct Node* ST[], char key[15])
 {
-    struct Node node = *ST[hash(key)];
+    struct Node node = *ST[hash1(key)];
 
     if (node.value == NULL)
     {
@@ -48,7 +48,7 @@ int get(struct Node* ST[], char key[15])
 
 int put(struct Node* ST[], char key[15], int value)
 {
-    struct Node node = *ST[hash(key)];
+    struct Node node = *ST[hash1(key)];
     while(1){
 
         if (node.key == key){
@@ -73,9 +73,9 @@ int put(struct Node* ST[], char key[15], int value)
 //3.4.4
 
 int hash_function(int letter){
-
+    int hash;
     for (letter = 0; letter < 27; letter++){
-        int hash = (31* (int) letter) % 29;
+        hash = (31* (int) letter) % 29;
         printf("the hash, %d \n", hash);
 
     }
@@ -104,9 +104,9 @@ char answer3_4_7[] = "When a is a arbitray fixed prime, it has the effect conver
 //3.4.9
 
 
-int delete(struct Node *ST[], char key)
+int delete_separate_chaining(struct Node *ST[], char key)
 {
-    int hashed_key = hash(key)
+    int hashed_key = hash1(key);
     struct Node* node = ST[hashed_key];
 
     if (node->key == key) ST[hashed_key] = node->next;
@@ -131,4 +131,54 @@ int delete(struct Node *ST[], char key)
 }
 
 
-/
+//3.4.10
+
+
+int linear_probe_hash(char key)
+{
+    int position = key - 'A' + 1;
+    return (11*position) % 16;
+
+}
+
+void linear_probing_put(char * keys, int * values, char key, int value, int keys_length)
+{
+    int i =0;
+    for (i = linear_probe_hash(key); keys[i] != '\0'; i = (i+1) % 16)
+    {
+        int *k = (keys + i);
+        if (*k == key)
+        {
+            *(values+i) = value;
+            return;
+        }
+    }
+    *(keys+i) = key;
+    *(values+i) = value;
+
+}
+
+//char keys[15];
+//int values[15];
+//
+//int keys_length = sizeof(keys)/ sizeof(char);
+//
+//memset(&keys, '\0', keys_length);
+//
+//
+//linear_probing_put(keys, values,(char *) 'E', 1, keys_length);
+//linear_probing_put(keys, values,(char *) 'A', 2, keys_length);
+//linear_probing_put(keys, values,(char *) 'S', 3, keys_length);
+//linear_probing_put(keys, values,(char *) 'Y', 4, keys_length);
+//linear_probing_put(keys, values,(char *) 'Q', 5, keys_length);
+//linear_probing_put(keys, values,(char *) 'U', 6, keys_length);
+//linear_probing_put(keys, values,(char *) 'T', 7, keys_length);
+//linear_probing_put(keys, values,(char *) 'I', 8, keys_length);
+//linear_probing_put(keys, values,(char *) 'O', 9, keys_length);
+//linear_probing_put(keys, values,(char *) 'N', 10, keys_length);
+//
+//
+//for (int i = 0; i < keys_length; i++)
+//{
+//printf("the key %c\n", keys[i]);
+//}

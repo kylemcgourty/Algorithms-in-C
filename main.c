@@ -10,8 +10,7 @@
 int main() {
     printf("Hello, Chapter 3.4!\n");
 
-    int letter = 'z';
-    hash_function(letter);
+
 
     return 0;
 
